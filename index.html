@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <title>Salary Calculator</title>
 </head>
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
   </header>
   <main>
     <h2>Add Employee</h2>
+    <form class="newEmployee" onSubmit="submitForm(event)">
+      <input data-testid="firstNameInput" id="firstName" type="text" placeholder="First Name" class="placeholder hide-on-focus"/>
+      <input data-testid="lastNameInput" id="lastName" type="text" placeholder="Last Name" class="placeholder hide-on-focus"/>
+      <input data-testid="idInput" id="idNumber" type="number" placeholder="ID Number" class="placeholder hide-on-focus"/>
+      <input data-testid="titleInput" id="jobTitle" type="text" placeholder="Job Title" class="placeholder hide-on-focus"/>
+      <input data-testid="annualSalaryInput" id="salary" type="number" placeholder="Annual Salary" class="placeholder hide-on-focus"/>
+      <button data-testid="submitButton">
+        Submit
+      </button>
+    </form>
+
     <h2>Employees</h2>
+    <table id="employees">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID Number</th>
+          <th>Job Title</th>
+          <th>Annual Salary</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="employeeInfo">
+        <!-- innerHTML -->
+      </tbody>
+    </table>
   </main>
   <footer>
     <p>Total Monthly</p>
   </footer>
+
+  <script src="client.js"></script>
 </body>
+
 </html>
