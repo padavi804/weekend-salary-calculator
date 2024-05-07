@@ -53,16 +53,16 @@ function submitForm(event) {
     <h4>$${monthlySalary.toFixed(2)}</h4>
     `;
 
-    
-overBugdet(monthlySalary);
-function overBugdet (monthlySalary){
-    if (Number(monthlySalary) > 20000) {
-        document.getElementById('footerSal').style.backgroundColor= "red";
-        monthlyDisplay.innerHTML = `
+// Overbudget warning.
+    overBugdet(monthlySalary);
+    function overBugdet(monthlySalary) {
+        if (Number(monthlySalary) > 20000) {
+            document.getElementById('footerSal').style.backgroundColor = "red";
+            monthlyDisplay.innerHTML = `
         <h4>$${monthlySalary.toFixed(2)} OVERBUDGET</h4>
         `;
+        }
     }
-}
 
 }
 
