@@ -1,11 +1,13 @@
 console.log('hello world');
 
-let totalMonthly = 0;
+let salaryTotal = [];
+
 
 function submitForm(event) {
     console.log('submitForm');
 
     event.preventDefault();
+
 
     // input variables from form to table
     let firstVal = document.querySelector('#firstName').value;
@@ -17,7 +19,7 @@ function submitForm(event) {
 
     // Append values to table
     let employeeData = document.querySelector('#employeeInfo');
-    employeeData.innerHTML +=`
+    employeeData.innerHTML += `
     <tr>
         <td>${firstVal}</td>
         <td>${lastVal}</td>
@@ -27,7 +29,44 @@ function submitForm(event) {
         <td><button onClick="removeEmployee(event)">Remove</button> </td>
     </tr>
     `;
+
+    // Reset form fields after submission
+    document.getElementById('newEmployee').reset();
+
+    // Find monthly salary
+    salaryTotal.push(salaryVal);
+    function annualSalary(salaryTotal) {
+        let annualSalary = 0
+        for (let i = 0; i < salaryTotal.length; i++)
+            annualSalary += Number(salaryTotal[i]);
+        return annualSalary
+    }
+    console.log('Sum of salaries is $', annualSalary(salaryTotal));
+    let monthlySalary = annualSalary(salaryTotal) / 12;
+    console.log('Monthly salary is $', monthlySalary);
+
+
+
+    // Display monthly total on HTML
+    let monthlyDisplay = document.getElementById('monthlyTotal');
+    monthlyDisplay.innerHTML = `
+    <h4>$${monthlySalary.toFixed(2)}</h4>
+    `;
+
+    
+overBugdet(monthlySalary);
+function overBugdet (monthlySalary){
+    if (Number(monthlySalary) > 20000) {
+        document.getElementById('footerSal').style.backgroundColor= "red";
+        monthlyDisplay.innerHTML = `
+        <h4>$${monthlySalary.toFixed(2)} OVERBUDGET</h4>
+        `;
+    }
 }
+
+}
+
+
 
 function removeEmployee(event) {
     event.target.parentElement.parentElement.remove();

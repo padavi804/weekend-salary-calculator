@@ -13,13 +13,18 @@
   </header>
   <main>
     <h2>Add Employee</h2>
-    <form class="newEmployee" onSubmit="submitForm(event)">
-      <input data-testid="firstNameInput" id="firstName" type="text" placeholder="First Name" class="placeholder hide-on-focus"/>
-      <input data-testid="lastNameInput" id="lastName" type="text" placeholder="Last Name" class="placeholder hide-on-focus"/>
-      <input data-testid="idInput" id="idNumber" type="number" placeholder="ID Number" class="placeholder hide-on-focus"/>
-      <input data-testid="titleInput" id="jobTitle" type="text" placeholder="Job Title" class="placeholder hide-on-focus"/>
-      <input data-testid="annualSalaryInput" id="salary" type="number" placeholder="Annual Salary" class="placeholder hide-on-focus"/>
-      <button data-testid="submitButton">
+    <form id="newEmployee" onSubmit="submitForm(event)">
+      <input data-testid="firstNameInput" id="firstName" type="text" type="reset" placeholder="First Name"
+        class="placeholder hide-on-focus" />
+      <input data-testid="lastNameInput" id="lastName" type="text" placeholder="Last Name"
+        class="placeholder hide-on-focus" />
+      <input data-testid="idInput" id="idNumber" type="number" placeholder="ID Number"
+        class="placeholder hide-on-focus" />
+      <input data-testid="titleInput" id="jobTitle" type="text" placeholder="Job Title"
+        class="placeholder hide-on-focus" />
+      <input data-testid="annualSalaryInput" id="salary" type="number" placeholder="Annual Salary"
+        class="placeholder hide-on-focus" />
+      <button data-testid="submitButton" id="submit">
         Submit
       </button>
     </form>
@@ -42,7 +47,10 @@
     </table>
   </main>
   <footer>
+    <div id="footerSal">
     <p>Total Monthly</p>
+    <p id="monthlyTotal">0</p>
+    </div>
   </footer>
 
   <script src="client.js"></script>
