@@ -3,9 +3,9 @@
 const express = require('express');
 
 const app = express();
-const port = process.envPORT || 5001
+const port = process.envPORT || 5001;
 
-app.use(express.static('server/public'));
+app.use(express.static('server/..'));
 
 app.listen(port, () => {
     console.log('listening on port', port);
