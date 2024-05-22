@@ -54,15 +54,7 @@ function submitForm(event) {
     `;
 
 // Overbudget warning.
-    // overBugdet(monthlySalary);
-    // function overBugdet(monthlySalary) {
-    //     if (Number(monthlySalary) > 20000) {
-    //         document.getElementById('footerSal').style.backgroundColor = "red";
-    //         monthlyDisplay.innerHTML = `
-    //     <h4>$${monthlySalary.toFixed(2)} OVERBUDGET</h4>
-    //     `;
-    //     }
-    // }
+    
     let overBudget = document.querySelector("footer");
 
     if (Number(monthlySalary) >= 20000){
